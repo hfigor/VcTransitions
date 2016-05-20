@@ -8,11 +8,12 @@
 
 import UIKit
 
-class ItemsTableViewController: UITableViewController {
+class ItemsTableViewController: UITableViewController,  UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      navigationController?.delegate = self
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -28,5 +29,40 @@ class ItemsTableViewController: UITableViewController {
         cell.textLabel?.text = "Item 0\(indexPath.row + 1)"
         return cell
     }
+
+  // MARK: Custom interaction classes instantiations
+  let customPresentAnimationController = CustomPresentAnimationController()
+  let customDismissAnimationController = CustomDismissAnimationController()
+  let customNavigationAnimationController = CustomNavigationAnimationController()
+  let customInteractionController = CustomInteractionController()
+
+  // MARK: Navigation
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
+    if segue.identifier == "showAction" {
+      let toViewController = segue.destinationViewController as UIViewController
+      toViewController.transitioningDelegate = self
+    }
+  }
+  
+  func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return customPresentAnimationController
+  }
+
+  func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return customDismissAnimationController
+  }
+
+  func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    if operation == .Push {  // support interactive controlls fc
+      customInteractionController.attachToViewController(toVC)
+    }
+    customNavigationAnimationController.reverse = operation == .Pop
+    return customNavigationAnimationController
+  }
+
+  func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    return customInteractionController.transitionInProgress ? customInteractionController : nil
+  }
 
 }

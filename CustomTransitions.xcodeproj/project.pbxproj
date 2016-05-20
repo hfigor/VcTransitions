@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01FB03AA1CECF6E90050B358 /* CustomPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FB03A91CECF6E90050B358 /* CustomPresentAnimationController.swift */; };
+		01FB03AC1CED0F280050B358 /* CustomDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FB03AB1CED0F280050B358 /* CustomDismissAnimationController.swift */; };
+		01FB03AE1CEE16BF0050B358 /* CustomNavigationAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FB03AD1CEE16BF0050B358 /* CustomNavigationAnimationController.swift */; };
+		01FB03B01CEE235B0050B358 /* CustomInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FB03AF1CEE235B0050B358 /* CustomInteractionController.swift */; };
 		5FACF6641AA5AEBF009C6C88 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FACF6631AA5AEBF009C6C88 /* ItemsTableViewController.swift */; };
 		5FF2AD5B1AA45CF60092F66C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF2AD5A1AA45CF60092F66C /* AppDelegate.swift */; };
 		5FF2AD601AA45CF60092F66C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FF2AD5E1AA45CF60092F66C /* Main.storyboard */; };
@@ -28,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01FB03A91CECF6E90050B358 /* CustomPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimationController.swift; sourceTree = "<group>"; };
+		01FB03AB1CED0F280050B358 /* CustomDismissAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDismissAnimationController.swift; sourceTree = "<group>"; };
+		01FB03AD1CEE16BF0050B358 /* CustomNavigationAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationAnimationController.swift; sourceTree = "<group>"; };
+		01FB03AF1CEE235B0050B358 /* CustomInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInteractionController.swift; sourceTree = "<group>"; };
 		5FACF6631AA5AEBF009C6C88 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
 		5FF2AD551AA45CF60092F66C /* CustomTransitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomTransitions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FF2AD591AA45CF60092F66C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +97,10 @@
 				5FF2AD581AA45CF60092F66C /* Supporting Files */,
 				5FF2AD7C1AA467630092F66C /* ActionViewController.swift */,
 				5FACF6631AA5AEBF009C6C88 /* ItemsTableViewController.swift */,
+				01FB03A91CECF6E90050B358 /* CustomPresentAnimationController.swift */,
+				01FB03AB1CED0F280050B358 /* CustomDismissAnimationController.swift */,
+				01FB03AD1CEE16BF0050B358 /* CustomNavigationAnimationController.swift */,
+				01FB03AF1CEE235B0050B358 /* CustomInteractionController.swift */,
 			);
 			path = CustomTransitions;
 			sourceTree = "<group>";
@@ -162,7 +174,8 @@
 		5FF2AD4D1AA45CF60092F66C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Appcoda;
 				TargetAttributes = {
 					5FF2AD541AA45CF60092F66C = {
@@ -219,9 +232,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01FB03B01CEE235B0050B358 /* CustomInteractionController.swift in Sources */,
 				5FF2AD7D1AA467630092F66C /* ActionViewController.swift in Sources */,
+				01FB03AC1CED0F280050B358 /* CustomDismissAnimationController.swift in Sources */,
+				01FB03AA1CECF6E90050B358 /* CustomPresentAnimationController.swift in Sources */,
 				5FF2AD5B1AA45CF60092F66C /* AppDelegate.swift in Sources */,
 				5FACF6641AA5AEBF009C6C88 /* ItemsTableViewController.swift in Sources */,
+				01FB03AE1CEE16BF0050B358 /* CustomNavigationAnimationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +300,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -348,6 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CustomTransitions/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -358,6 +377,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CustomTransitions/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -376,6 +396,7 @@
 				);
 				INFOPLIST_FILE = CustomTransitionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomTransitions.app/CustomTransitions";
 			};
@@ -391,6 +412,7 @@
 				);
 				INFOPLIST_FILE = CustomTransitionsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.appcoda.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomTransitions.app/CustomTransitions";
 			};
